@@ -55,26 +55,22 @@ var timer = {
   },
   start: function() {
 
-    // DONE: Use setInterval to start the count here and set the clock to running.
-    // if clockRunning is false
+
     if (!clockRunning) {
-    	// variable intervalId holds the counter 
-    	// setInterval() --> calls timer.count at an interval of 1000 milliseconds (1 second)
         intervalId = setInterval(timer.count, 1000);
         clockRunning = true;
     }
   },
   stop: function() {
     console.log("stopping time");
-    // DONE: Use clearInterval to stop the count here and set the clock to not be running.
+    
     clearInterval(intervalId);
     clockRunning = false;
   },
   count: function() {
 
-    // DONE: decrement time by 1
+  
     timer.time--;
-    // console.log(typeof timer.time)
 
     if(timer.time === 0){
       console.log("working");
@@ -84,41 +80,33 @@ var timer = {
   }
 };
 
-//console.log(timer.time) --> 0 
 
-// ==================== FUNCTIONS ========================== //
-
-// startGame function 
   function startGame(){
-    // calls the start function inside the timer object
+    
     timer.start()
 
   }
 
-//Set up function to show the results (A panel to display them)
-
 
     function showQuestions(questions, quizContainer){
-
-// we'll need a place to store the output and the answer choices
         var output = [];
         var answers;
-    // for each question...
+  
         for(var i=0; i<myQuestions.length; i++){
             
-            // We need a command to reset the list of answers
+            
             $("#quest").html(myQuestions[i].questions);
 
             $("#ans1").html(myQuestions[i].questions.a);
             $("#ans2").html(myQuestions[i].questions.b);
             $("#ans3").html(myQuestions[i].questions.c);
             $("#ans4").html(myQuestions[i].questions.d);
-            // We want to assign a variable for each available answer...
+            
             var one = myQuestions[i].questions.a;
             var two = myQuestions[i].questions.b;
             var three = myQuestions[i].questions.c;
             var four = myQuestions[i].questions.d;
-                // ...add  button to each answer
+            
             $("#ans1").on("click", function(){
               if(one === myQuestions[i].answers){
               console.log("correct");        
@@ -162,40 +150,6 @@ var timer = {
 
           }
 
-// add question and its answers to the output
-
-// finally combine our output list into one string of html and put it on the page
-
-// gather answer containers from our quiz
-
-// keep track of user's answers
-        
-        // for each question...
-
-            // find selected answer
-            
-            // if answer is correct
-                // add to the number of correct answers
-                
-                // make the answers a color to show its correct
-
-                // if answer is wrong or blank
-            
-                // make the answers a color to show its wrong
-   
-
-        // show number of correct answers out of total
-
-
 }
-// =================== EVENT LISTENER ==================== //
-  // startGame();
 
-
-
-    
-
-    // show questions right away
-    
-    // on submit button, show results
     
